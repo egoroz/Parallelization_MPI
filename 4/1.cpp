@@ -1,9 +1,8 @@
 #include <iostream>
 #include <mpi.h>
 
-// void CHECK_SUCCESS(const int &  success){
+// ЗАДАЧА: каждый процесс должен вывести какой его номер и сколько всего процессов
 
-// }
 
 int main(int argc, char **argv){
     int success = MPI_Init(&argc, &argv);

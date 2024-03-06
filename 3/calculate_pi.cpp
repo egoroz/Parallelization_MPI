@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cmath>
 
+// ЗАДАЧА: посчитать число пи с какой-то точностью
+
+
 double f(double x){
     return sqrt(4.0 - x*x);
 }
