@@ -7,5 +7,5 @@
 > mpic++ name.cpp -o result
 
 запуск на кластере:
-> mpic++ name.cpp -o result
+> mpic++ name.cpp -o result\
 > qsub script.sh
