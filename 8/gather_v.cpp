@@ -5,9 +5,10 @@
 
 int ERROR_CODE = 1;
 
-void CheckSuccess(int success){
-    ERROR_CODE++;
-    if (MPI_SUCCESS != success){MPI_Abort(MPI_COMM_WORLD, ERROR_CODE);}
+int CheckSuccess(int success){
+    ++ERROR_CODE;
+    if (MPI_SUCCESS != success){MPI_Abort(MPI_COMM_WORLD, ERROR_CODE); return ERROR_CODE;}
+    return 0;
 }
 
 int main(int argc, char** argv) {
@@ -36,7 +37,7 @@ int main(int argc, char** argv) {
     }
 
     if (rank == 0) {
-        int res_size = size * size;
+        int res_size = size * size; // 
 
         std::vector<int> result(res_size, 0);
         MPI_Gatherv(local_data.data(), 1, MPI_INT, result.data(), recv_counts.data(), displacements.data(), MPI_INT, 0, MPI_COMM_WORLD);
