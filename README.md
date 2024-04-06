@@ -5,6 +5,7 @@
 
 компиляция на ноутбуке:
 > mpic++ name.cpp -o result
+> mpirun -n 6 ./result
 
 запуск на кластере:
 > mpic++ name.cpp -o result\
